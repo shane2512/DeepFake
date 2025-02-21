@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Detection Result</h2>
+        <p>{{ prediction }}</p>
+
+        {% if uploaded_file %}
+            <p>Uploaded File:</p>
+            {% if file_type == "image" %}
+                <img src="{{ url_for('static', filename='uploads/' + uploaded_file) }}" alt="Uploaded Image" class="uploaded-media">
+            {% else %}
+                <video controls class="uploaded-media">
+                    <source src="{{ url_for('static', filename='uploads/' + uploaded_file) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% endif %}
+        {% endif %}
+
+        <br><br>
+        <a href="/">Upload Another File</a>
+    </div>
+</body>
+</html>

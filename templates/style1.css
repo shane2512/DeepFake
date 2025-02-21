@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    background-color: #ffffff; /* White Background */
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Sidebar (Left) */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #f0f0f0; /* Light Grey */
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+/* Sidebar Buttons */
+.menu-button {
+    background: #e0e0e0;
+    color: black;
+    border: none;
+    padding: 12px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+    background: #d6d6d6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 220px;
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Advertisements Section (Right) */
+.ad-section {
+    width: 250px;
+    height: 100vh;
+    background: #f0f0f0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Running People Animation in Background */
+.running-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Keep it in the background */
+}
+
+/* Running Figures */
+.runner {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* Faint background effect */
+}
+
+/* Running Person 1 */
+#runner1 {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png'); /* Running Person 1 */
+    left: -100px;
+    animation: run1 5s linear infinite;
+}
+
+/* Running Person 2 */
+#runner2 {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2922/2922506.png'); /* Running Person 2 */
+    left: -150px;
+    animation: run2 5s linear infinite;
+}
+
+/* Running Animation */
+@keyframes run1 {
+    0% { left: -100px; }
+    100% { left: 100%; }
+}
+
+@keyframes run2 {
+    0% { left: -150px; }
+    100% { left: 100%; }
+}
